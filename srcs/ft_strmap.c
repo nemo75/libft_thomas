@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thbricqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 07:30:14 by thbricqu          #+#    #+#             */
-/*   Updated: 2016/11/04 07:30:15 by thbricqu         ###   ########.fr       */
+/*   Created: 2016/11/10 04:25:36 by thbricqu          #+#    #+#             */
+/*   Updated: 2016/11/10 04:25:38 by thbricqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	unsigned int	i;
+	char	*tab;
+	int		i;
 
 	i = 0;
-	while ((*s1 || *s2) && (i < n))
+	if (s == NULL)
+		return (NULL);
+	tab = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (tab == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		if (*s1 != *s2)
-			return (((unsigned char)*s1) - ((unsigned char)*s2));
+		tab[i] = (*f)(s[i]);
 		i++;
-		s1++;
-		s2++;
 	}
-	return (0);
+	tab[i] = '\0';
+	return (tab);
 }

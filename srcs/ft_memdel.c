@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thbricqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 07:30:14 by thbricqu          #+#    #+#             */
-/*   Updated: 2016/11/04 07:30:15 by thbricqu         ###   ########.fr       */
+/*   Created: 2016/11/10 03:10:11 by thbricqu          #+#    #+#             */
+/*   Updated: 2016/11/10 03:10:13 by thbricqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+void	ft_memdel(void **ap)
 {
-	unsigned int	i;
-
-	i = 0;
-	while ((*s1 || *s2) && (i < n))
+	if (ap != NULL)
 	{
-		if (*s1 != *s2)
-			return (((unsigned char)*s1) - ((unsigned char)*s2));
-		i++;
-		s1++;
-		s2++;
+		free(*ap);
+		*ap = NULL;
 	}
-	return (0);
 }

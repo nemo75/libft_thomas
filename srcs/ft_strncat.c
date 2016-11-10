@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-#include "string.h"
-#include "unistd.h"
+#include "libft.h"
 
 char	*ft_strncat(char *dest, char *src, size_t n)
 {
-	int i;
-	int c;
-	int b;
+	size_t	i;
+	size_t	c;
+	size_t	b;
 
 	b = 0;
 	i = 0;
@@ -29,36 +27,11 @@ char	*ft_strncat(char *dest, char *src, size_t n)
 		b++;
 	if (n > b)
 		n = b;
-	i = i - n;
-	while (c++ <= b && c < n)
+	while (c <= b && c < n)
+	{
 		dest[i + c] = src[c];
+		c++;
+	}
 	dest[i + c] = '\0';
 	return (char *)(&dest[0]);
-}
-
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-int	main()
-{
-	char tab[13] = "coucou";
-	char tab2[6] = "salut";
-
-	ft_putstr(strncat(tab, tab2, 2));
-	printf("%c\n",'\n');
-	ft_putstr(ft_strncat(tab, tab2, 2));
 }

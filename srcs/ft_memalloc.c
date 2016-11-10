@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thbricqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 07:30:14 by thbricqu          #+#    #+#             */
-/*   Updated: 2016/11/04 07:30:15 by thbricqu         ###   ########.fr       */
+/*   Created: 2016/11/09 17:29:53 by thbricqu          #+#    #+#             */
+/*   Updated: 2016/11/09 17:29:54 by thbricqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+void	*ft_memalloc(size_t size)
 {
-	unsigned int	i;
+	char *tab;
 
-	i = 0;
-	while ((*s1 || *s2) && (i < n))
-	{
-		if (*s1 != *s2)
-			return (((unsigned char)*s1) - ((unsigned char)*s2));
-		i++;
-		s1++;
-		s2++;
-	}
-	return (0);
+	tab = (void *)malloc(sizeof(size_t) * size);
+	if (tab == NULL)
+		return (NULL);
+	ft_bzero(tab, size);
+	return (tab);
 }

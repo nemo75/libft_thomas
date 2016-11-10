@@ -6,18 +6,18 @@
 /*   By: thbricqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 07:22:09 by thbricqu          #+#    #+#             */
-/*   Updated: 2016/11/04 07:22:12 by thbricqu         ###   ########.fr       */
+/*   Updated: 2016/11/07 15:51:21 by thbricqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1 || *s2)
 	{
 		if (*s1 != *s2)
-			return ((*s1) - (*s2));
+			return (((unsigned char)*s1) - ((unsigned char)*s2));
 		s1++;
 		s2++;
 	}

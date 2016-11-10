@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thbricqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 11:42:32 by thbricqu          #+#    #+#             */
-/*   Updated: 2016/11/04 11:43:57 by thbricqu         ###   ########.fr       */
+/*   Created: 2016/11/10 04:03:13 by thbricqu          #+#    #+#             */
+/*   Updated: 2016/11/10 04:03:15 by thbricqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
+#include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int i;
-
-	i = 0;
-	while (str[i])
+	if (s != NULL)
 	{
-		ft_putchar(str[i]);
-		i++;
+		while (*s)
+		{
+			f(s);
+			s++;
+		}
 	}
 }
-
-int	main()
-{
-	char tab[13] = "coucou";
-	char tab2[6] = "salut";
-
-	ft_putstr(strcat(tab, tab2));
-	printf("%c\n",'\n');
-	ft_putstr(ft_strcat(tab, tab2));
-}
-

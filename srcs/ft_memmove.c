@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thbricqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 07:30:14 by thbricqu          #+#    #+#             */
-/*   Updated: 2016/11/04 07:30:15 by thbricqu         ###   ########.fr       */
+/*   Created: 2016/11/08 06:02:30 by thbricqu          #+#    #+#             */
+/*   Updated: 2016/11/08 06:02:31 by thbricqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
+	char	*dst_cpy;
+	char	*src_cpy;
 
 	i = 0;
-	while ((*s1 || *s2) && (i < n))
+	src_cpy = (void *)src;
+	dst_cpy = (void *)dst;
+	if (src > dst)
+		return (ft_memcpy(dst_cpy, src_cpy, n));
+	else
 	{
-		if (*s1 != *s2)
-			return (((unsigned char)*s1) - ((unsigned char)*s2));
-		i++;
-		s1++;
-		s2++;
+		while (i != n)
+		{
+			dst_cpy[n - i - 1] = src_cpy[n - i - 1];
+			i++;
+		}
+		return (dst_cpy);
 	}
-	return (0);
 }

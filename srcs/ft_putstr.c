@@ -14,12 +14,15 @@
 
 void	ft_putstr(char *str)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (str[i])
+	if (str != NULL)
 	{
-		ft_putchar(str[i]);
-		i++;
+		while (str[i])
+		{
+			ft_putchar(str[i]);
+			i++;
+		}
 	}
 }
