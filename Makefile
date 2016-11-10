@@ -61,7 +61,10 @@ SRC = 	$(SRC_C)ft_putchar.c \
 		$(SRC_C)ft_strmapi.c\
 		$(SRC_C)ft_strequ.c \
 		$(SRC_C)ft_strnequ.c \
-		$(SRC_C)ft_strsub.c
+		$(SRC_C)ft_strsub.c \
+		$(SRC_C)ft_strjoin.c \
+		$(SRC_C)ft_strtrim.c \
+
 
 FLAG = -Wall -Werror -Wextra
 HEADERS = ./includes/
@@ -115,7 +118,10 @@ OBJ =	ft_putchar.o \
 		ft_strmapi.o \
 		ft_strequ.o \
 		ft_strnequ.o \
-		ft_strsub.o
+		ft_strsub.o \
+		ft_strjoin.o \
+		ft_strtrim.o \
+		ft_strspit.o
 
 OPTIONS = -c -I $(HEADERS)
 
