@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *str)
 	while (str[i] && (str[len + i] == 32 || str[len + i] == 10 ||
 		str[len + i] == 44 || str[len + i] == 9))
 		len--;
-	new_str = ft_strnew(len);
+	new_str = ft_strnew(len + 1);
 	if (new_str == NULL)
 		return (NULL);
 	ft_strncpy(new_str, (char *)str + i, len + 1);

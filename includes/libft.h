@@ -66,7 +66,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_itoa(int n);
-char 	**ft_strsplit(char const *s, char c);
+char	**ft_strsplit(char const *s, char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 #endif
