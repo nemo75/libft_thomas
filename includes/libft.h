@@ -15,8 +15,14 @@
 
 # include <unistd.h>
 # include <string.h>
-# include <ctype.h>
 # include <stdlib.h>
+
+typedef struct	s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
 
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
@@ -51,6 +57,7 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_countwordsbychar(char const *s, char c);
 char	*ft_strtrim(char const *str);
 char	*ft_strjoin(char const *s1, char const*s2);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
@@ -68,5 +75,6 @@ char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_itoa(int n);
 char	**ft_strsplit(char const *s, char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+t_list	*ft_lstnew(void const *content, size_t content_size);
 
 #endif

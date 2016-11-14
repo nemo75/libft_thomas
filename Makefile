@@ -64,7 +64,9 @@ SRC = 	$(SRC_C)ft_putchar.c \
 		$(SRC_C)ft_strsub.c \
 		$(SRC_C)ft_strjoin.c \
 		$(SRC_C)ft_strtrim.c \
-		$(SRC_C)ft_strsplit.c
+		$(SRC_C)ft_strsplit.c \
+		$(SRC_C)ft_countwordsbychar.c \
+		$(SRC_C)ft_lstnew.c
 
 
 FLAG = -Wall -Werror -Wextra
@@ -122,7 +124,9 @@ OBJ =	ft_putchar.o \
 		ft_strsub.o \
 		ft_strjoin.o \
 		ft_strtrim.o \
-		ft_strsplit.o
+		ft_strsplit.o \
+		ft_countwordsbychar.o \
+		ft_lstnew.o
 
 OPTIONS = -c -I $(HEADERS)
 
